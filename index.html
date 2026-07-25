@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="bpaas-design-system" content="editorial-apple">
+  <meta name="bpaas-design-theme" content="kr-ledger-warm">
+  <meta name="description" content="가격, 분위기, 인원, 목적에 따라 셔츠룸부터 하이퍼블릭까지 객관적 수치로 비교하는 정보 블로그. 처음 방문자를 위한 조건별 선택 안내와 데이터 기반 분석.">
+  <meta name="keywords" content="유흥 업종 비교, 셔츠룸, 룸싸롱, 텐프로, 텐카페, 쩜오, 하이퍼블릭, 풀싸롱, 가라오케, 비즈니스클럽, 업종 차이, 가격 비교">
+  <link rel="canonical" href="https://roundlog.site/">
+  <title>유흥 업종 비교 — 조건별 선택 기준, 가격·분위기·인원·목적 축으로 분석</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="유흥 업종 비교 — 조건별 선택 기준, 가격·분위기·인원·목적 축으로 분석">
+  <meta property="og:description" content="가격, 분위기, 인원, 목적에 따라 셸츠룸부터 하이브릭까지 데이터 기반 비교.">
+  <meta property="og:url" content="https://roundlog.site/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:site_name" content="유흥 업종 비교">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="유흥 업종 비교 — 조건별 선택 기준, 가격·분위기·인원·목적 축으로 분석">
+  <meta name="twitter:description" content="가격, 분위기, 인원, 목적에 따라 셸츠룸부터 하이브릭까지 데이터 기반 비교.">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "유흥 업종 비교",
+      "url": "https://roundlog.site",
+      "author": {
+        "@type": "Person",
+        "name": "정원호"
+      },
+      "mainEntity": {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "룸싸롱과 텐카페의 가장 큰 차이는 무엇인가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "룸싸롱은 무대와 사운드 시스템을 갖춘 넓은 공간에서 다수가 함께 즐기는 구조이며, 텐카페는 바 테이블 중심의 소수 인원 대화 지향 공간입니다. 가격대도 텐카페가 약 30% 낮은 편입니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "처음 방문한다면 어떤 업종이 가장 부담 없는 선택인가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "가라오케 또는 펍 계열이 가장 접근이 쉽습니다. 예약 없이 방문 가능한 경우가 많고, 1인당 가격도 3–5만원대에서 시작합니다. 혼자 또는 소규모 인원으로 부담 없이 이용할 수 있습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "비즈니스 접대용으로 적합한 업종은 무엇인가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "비즈니스클럽과 풀싸롱이 가장 적합합니다. 독립된 공간, 높은 수준의 서비스, 그리고 4–6인이 이용할 수 있는 테이블 구성이 갖추어져 있어 외부 시선을 신경 쓰지 않습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "가라오케와 노래방은 어떻게 다른가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "가라오케는 주류 판매 라이센스와 함께 운영되는 성인 대상 공간으로, 룸당 최소 비용이 있으며 시간제가 아닌 테이블 차지 형식입니다. 노래방은 시간 대여 중심으로 음료만 제공됩니다."
+            }
+          }
+        ]
+      }
+    }
+  </script>
+
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background: #fafaf7;
+    }
+
+    body {
+      font-family: 'IBM Plex Mono', 'Courier New', monospace;
+      background: #fafaf7;
+      color: #191917;
+      line-height: 1.6;
+      letter-spacing: -0.01em;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1, h2, h3, h4 {
+      font-family: 'Noto Serif KR', 'Georgia', serif;
+      font-weight: 700;
+      text-transform: none;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 1.05;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 3vw, 2.5rem);
+      border-bottom: 3px solid #191917;
+      padding-bottom: 0.5rem;
+      margin-bottom: 2rem;
+      display: inline-block;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      border-left: 3px solid #c8960c;
+      padding-left: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.95rem;
+    }
+
+    /* ===== LAYOUT ===== */
+    .r-box-5ql6 {
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .n-item-stwg-row {
+      border-bottom: 1px solid #191917;
+      padding: 72px 0;
+    }
+
+    .n-item-stwg-row:last-child {
+      border-bottom: none;
+    }
+
+    .v-foot-2nkb-gap {
+      margin-bottom: 120px;
+    }
+
+    /* ===== HEADER / NAV ===== */
+    .q-side-c9i1 {
+      border-bottom: 3px solid #191917;
+      padding: 1.5rem 0;
+      background: #fafaf7;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .q-side-c9i1-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .v-wrap-qs2n-title {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 1.4rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #191917;
+      text-decoration: none;
+      border: 2px solid #191917;
+      padding: 0.3rem 0.8rem;
+    }
+
+    .v-list-z8ck-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .v-list-z8ck-links a {
+      color: #191917;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    .v-list-z8ck-links a:hover {
+      border-bottom-color: #c8960c;
+    }
+
+    .v-box-1zof {
+      display: none;
+      background: none;
+      border: 2px solid #191917;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.2rem 0.6rem;
+      color: #191917;
+    }
+
+    /* ===== HERO ===== */
+    .k-hero-vlpl {
+      padding: 120px 0 72px;
+      border-bottom: 3px solid #191917;
+    }
+
+    .k-hero-vlpl-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .k-hero-vlpl-ledger {
+      border: 2px solid #191917;
+      padding: 2rem;
+      background: #fafaf7;
+    }
+
+    .k-hero-vlpl-ledger-title {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border-bottom: 1px solid #191917;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      color: #191917;
+    }
+
+    .k-hero-vlpl-stat-row {
+      display: flex;
+      gap: 2rem;
+      justify-content: space-between;
+      border-bottom: 1px solid #d4d4cd;
+      padding: 0.8rem 0;
+    }
+
+    .k-hero-vlpl-stat-row:last-child {
+      border-bottom: none;
+    }
+
+    .k-hero-vlpl-stat-num {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #c8960c;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .k-hero-vlpl-stat-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #555;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    /* ===== METRIC CELLS ===== */
+    .q-item-onv9-row {
+      display: flex;
+      gap: 0;
+      border: 2px solid #191917;
+      overflow-x: auto;
+    }
+
+    .q-item-onv9-cell {
+      flex: 1 1 0;
+      min-width: 120px;
+      border-right: 1px solid #d4d4cd;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .q-item-onv9-cell:last-child {
+      border-right: none;
+    }
+
+    .q-item-onv9-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #c8960c;
+    }
+
+    .q-item-onv9-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.5rem;
+    }
+
+    /* ===== DOUBLE-RULE TABLE ===== */
+    .n-list-q18w-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.85rem;
+    }
+
+    .n-list-q18w-table th {
+      border-top: 3px solid #191917;
+      border-bottom: 3px solid #191917;
+      text-align: left;
+      padding: 1rem 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: transparent;
+    }
+
+    .n-list-q18w-table td {
+      border-bottom: 1px solid #d4d4cd;
+      padding: 0.8rem;
+    }
+
+    .n-list-q18w-table .r-nav-mps2-cell {
+      color: #c8960c;
+      font-weight: 700;
+    }
+
+    /* ===== SIDEBAR STAT BOX ===== */
+    .v-head-szyy-box {
+      border: 2px solid #191917;
+      padding: 1.5rem;
+      text-align: right;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .v-head-szyy-box-num {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #c8960c;
+      line-height: 1;
+    }
+
+    .v-head-szyy-box-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 0.5rem;
+    }
+
+    /* ===== POST CARDS ===== */
+    .q-side-w6ox-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 2px solid #191917;
+    }
+
+    .q-side-w6ox-item {
+      display: grid;
+      grid-template-columns: 120px 1fr auto;
+      gap: 1.5rem;
+      padding: 1.5rem;
+      border-bottom: 1px solid #d4d4cd;
+      align-items: center;
+      transition: background 0.15s;
+    }
+
+    .q-side-w6ox-item:last-child {
+      border-bottom: none;
+    }
+
+    .q-side-w6ox-item:hover {
+      background: #fff;
+    }
+
+    .q-side-w6ox-date {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      color: #555;
+    }
+
+    .q-side-w6ox-title-link {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: #191917;
+      border-bottom: 1px solid transparent;
+    }
+
+    .q-side-w6ox-title-link:hover {
+      border-bottom-color: #c8960c;
+    }
+
+    .q-side-w6ox-category {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      border: 1px solid #191917;
+      padding: 0.2rem 0.6rem;
+      color: #191917;
+      text-align: center;
+    }
+
+    /* ===== SEARCH BAR ===== */
+    .t-box-388x-form {
+      display: flex;
+      gap: 0;
+      margin-bottom: 2rem;
+    }
+
+    .t-box-388x-input {
+      flex: 1;
+      border: 2px solid #191917;
+      padding: 0.9rem
+</body>
+</html>
