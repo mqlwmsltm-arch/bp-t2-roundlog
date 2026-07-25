@@ -1,424 +1,122 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="bpaas-design-system" content="editorial-apple">
-  <meta name="bpaas-design-theme" content="kr-ledger-warm">
-  <meta name="description" content="가격, 분위기, 인원, 목적에 따라 셔츠룸부터 하이퍼블릭까지 객관적 수치로 비교하는 정보 블로그. 처음 방문자를 위한 조건별 선택 안내와 데이터 기반 분석.">
-  <meta name="keywords" content="유흥 업종 비교, 셔츠룸, 룸싸롱, 텐프로, 텐카페, 쩜오, 하이퍼블릭, 풀싸롱, 가라오케, 비즈니스클럽, 업종 차이, 가격 비교">
-  <link rel="canonical" href="https://roundlog.site/blog-2.html">
-  <title>유흥 업종 비교 — 조건별 선택 기준, 가격·분위기·인원·목적 축으로 분석</title>
-  <!-- Open Graph -->
-  <meta property="og:title" content="유흥 업종 비교 — 조건별 선택 기준, 가격·분위기·인원·목적 축으로 분석">
-  <meta property="og:description" content="가격, 분위기, 인원, 목적에 따라 셔츠룸부터 하이퍼블릭까지 객관적 수치로 비교하는 정보 블로그. 처음 방문자를 위한 조건별 선택 안내와 데이터 기반 분석.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://roundlog.site/blog-2.html">
-  <meta property="og:locale" content="ko_KR">
-  <style>
-    :root {
-      --bg: #faf9f6;
-      --card-bg: #ffffff;
-      --text-primary: #1c1c1e;
-      --text-secondary: #636366;
-      --text-tertiary: #8e8e93;
-      --border: #e5e5ea;
-      --accent: #af5c3b;
-      --accent-wash: rgba(175, 92, 59, 0.08);
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
-      --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
-      --radius-sm: 10px;
-      --radius-md: 16px;
-      --radius-lg: 20px;
-      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      --font-serif: 'Georgia', 'Times New Roman', serif;
-      --max-width: 720px;
-      --spacing-xs: 8px;
-      --spacing-sm: 16px;
-      --spacing-md: 24px;
-      --spacing-lg: 32px;
-      --spacing-xl: 48px;
-      --spacing-2xl: 64px;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: var(--font-sans);
-      background-color: var(--bg);
-      color: var(--text-primary);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    .site-header {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: var(--spacing-lg) var(--spacing-md) var(--spacing-md);
-      display: flex;
-      flex-direction: column;
-      gap: var(--spacing-sm);
-      border-bottom: 1px solid var(--border);
-      margin-bottom: var(--spacing-xl);
-    }
-
-    .logo-area {
-      display: flex;
-      align-items: baseline;
-      gap: var(--spacing-xs);
-    }
-
-    .logo-text {
-      font-family: var(--font-serif);
-      font-size: 1.8rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      color: var(--text-primary);
-      text-decoration: none;
-    }
-
-    .logo-dot {
-      width: 6px;
-      height: 6px;
-      background-color: var(--accent);
-      border-radius: 50%;
-      display: inline-block;
-      margin-left: 2px;
-    }
-
-    .site-nav {
-      display: flex;
-      gap: var(--spacing-md);
-      flex-wrap: wrap;
-    }
-
-    .site-nav a {
-      text-decoration: none;
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      font-weight: 500;
-      letter-spacing: -0.2px;
-      padding-bottom: 2px;
-      border-bottom: 1px solid transparent;
-      transition: color 0.2s, border-color 0.2s;
-    }
-
-    .site-nav a:hover,
-    .site-nav a.active {
-      color: var(--text-primary);
-      border-bottom-color: var(--accent);
-    }
-
-    .main-content {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 var(--spacing-md) var(--spacing-2xl);
-      display: flex;
-      flex-direction: column;
-      gap: var(--spacing-xl);
-    }
-
-    .page-title-block {
-      display: flex;
-      flex-direction: column;
-      gap: var(--spacing-sm);
-    }
-
-    .page-label {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    .page-title {
-      font-family: var(--font-serif);
-      font-size: 2.8rem;
-      font-weight: 700;
-      line-height: 1.15;
-      letter-spacing: -0.8px;
-      color: var(--text-primary);
-    }
-
-    .page-subtitle {
-      font-size: 1.1rem;
-      color: var(--text-secondary);
-      font-weight: 400;
-      line-height: 1.5;
-      max-width: 600px;
-    }
-
-    .comparison-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--spacing-md);
-    }
-
-    .compare-card {
-      background-color: var(--card-bg);
-      border-radius: var(--radius-md);
-      padding: var(--spacing-lg);
-      box-shadow: var(--shadow-sm);
-      border: 1px solid var(--border);
-      display: flex;
-      flex-direction: column;
-      gap: var(--spacing-md);
-      transition: box-shadow 0.2s;
-    }
-
-    .compare-card:hover {
-      box-shadow: var(--shadow-md);
-    }
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: var(--spacing-sm);
-    }
-
-    .card-title {
-      font-family: var(--font-serif);
-      font-size: 1.5rem;
-      font-weight: 700;
-      letter-spacing: -0.3px;
-    }
-
-    .card-badge {
-      background-color: var(--accent-wash);
-      color: var(--accent);
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 4px 10px;
-      border-radius: 20px;
-      white-space: nowrap;
-      letter-spacing: 0.2px;
-    }
-
-    .card-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--spacing-sm);
-      background-color: #f9f9f7;
-      border-radius: var(--radius-sm);
-      padding: var(--spacing-sm);
-    }
-
-    .stat-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 2px;
-    }
-
-    .stat-value {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-
-    .stat-label {
-      font-size: 0.7rem;
-      color: var(--text-tertiary);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .card-description {
-      font-size: 0.95rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    .card-verdict {
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: var(--text-primary);
-      border-top: 1px solid var(--border);
-      padding-top: var(--spacing-sm);
-      display: flex;
-      align-items: center;
-      gap: var(--spacing-xs);
-    }
-
-    .verdict-icon {
-      font-size: 1.1rem;
-    }
-
-    .data-table-wrapper {
-      overflow-x: auto;
-      margin: var(--spacing-sm) 0;
-    }
-
-    .data-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.85rem;
-      min-width: 500px;
-    }
-
-    .data-table th {
-      background-color: var(--accent-wash);
-      color: var(--accent);
-      font-weight: 600;
-      padding: 10px 12px;
-      text-align: left;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .data-table td {
-      padding: 10px 12px;
-      border-bottom: 1px solid var(--border);
-      color: var(--text-secondary);
-      font-size: 0.85rem;
-    }
-
-    .data-table tr:last-child td {
-      border-bottom: none;
-    }
-
-    .data-table .highlight-cell {
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-
-    .insight-box {
-      background-color: var(--card-bg);
-      border-left: 4px solid var(--accent);
-      border-radius: var(--radius-sm);
-      padding: var(--spacing-md) var(--spacing-lg);
-      box-shadow: var(--shadow-sm);
-      font-style: italic;
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-    }
-
-    .insight-box strong {
-      font-style: normal;
-      color: var(--text-primary);
-    }
-
-    .faq-section {
-      display: flex;
-      flex-direction: column;
-      gap: var(--spacing-sm);
-    }
-
-    .faq-item {
-      background-color: var(--card-bg);
-      border-radius: var(--radius-sm);
-      padding: var(--spacing-md);
-      border: 1px solid var(--border);
-    }
-
-    .faq-question {
-      font-weight: 600;
-      font-size: 1rem;
-      color: var(--text-primary);
-      margin-bottom: var(--spacing-xs);
-    }
-
-    .faq-answer {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      line-height: 1.5;
-    }
-
-    .site-footer {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: var(--spacing-lg) var(--spacing-md);
-      border-top: 1px solid var(--border);
-      text-align: center;
-      color: var(--text-tertiary);
-      font-size: 0.8rem;
-    }
-
-    @media (max-width: 600px) {
-      .page-title {
-        font-size: 2rem;
-      }
-      .card-stats {
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 4px;
-      }
-      .stat-value {
-        font-size: 1rem;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<title>비교 - 유흥 업종 비교</title>
+<meta name="description" content="서울 전역 유흥 업종을 가격·분위기·인원·목적 별로 비교·분석합니다. 셔츠룸·룸싸롱·텐프로 등 12개 업종의 차이를 한눈에 파악하고, 상황별 최적 선택을 도와드립니다.">
+<meta name="keywords" content="유흥, 업종 비교, 셔츠룸, 룸싸롱, 텐프로, 텐카페, 쩜오, 하이퍼블릭, 풀싸롱, 가라오케, 노래방, 비즈니스클럽, 마사지, 펍">
+<link rel="canonical" href="https://roundlog.site/blog-2.html">
+<meta property="og:title" content="유흥 업종 비교 — 조건별 선택 가이드와 최신 트렌드, 서울 전역 데이터 분석">
+<meta property="og:description" content="가격·분위기·인원·목적 별로 서울의 다양한 유흥 업종을 비교·분석한 블로그. 상황에 맞는 최적 선택을 제시합니다.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://roundlog.site/blog-2.html">
+<meta property="og:image" content="https://roundlog.site/og-image.jpg">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="site-brand">
-      <a href="/" class="logo-text">RoundLog<span class="logo-dot"></span></a>
+
+<header class="k-top-vbdc">
+    <div class="container">
+        <h1>서울 유흥 업종 비교</h1>
+        <nav class="r-grid-tm6h">
+            <a href="/">홈</a>
+            <a href="/shirtsroom">셔츠룸</a>
+            <a href="/room-salon">룸싸롱</a>
+            <a href="/tenpro">텐프로</a>
+            <a href="/compare">비교</a>
+            <a href="/contact">연락처</a>
+        </nav>
     </div>
-    <nav class="site-nav">
-      <a href="/">홈</a>
-      <a href="/compare" class="active">비교</a>
-      <a href="/analysis">분석</a>
-      <a href="/guide">가이드</a>
-      <a href="/faq">FAQ</a>
-    </nav>
-  </header>
+</header>
 
-  <main class="main-content">
-    <div class="page-title-block">
-      <span class="page-label">Transparent Ledger</span>
-      <h1 class="page-title">셔츠룸부터 하이퍼블릭까지,<br>데이터로 찢어보는 업종 비교</h1>
-      <p class="page-subtitle">감성적인 후기나 퍼주는 정보는 없다. 오직 가격, 시간, 인원 제약, 분위기라는 냉정한 축으로만 분석한다. 당신 상황에 맞는 선택은 결국 하나다.</p>
+<main class="container">
+    <section>
+        <h2>업종별 핵심 포인트 총정리</h2>
+        <p>서울의 대표적인 유흥 업종 12가지를 가격, 분위기, 인원 제한, 이용 목적 별로 정리했습니다. 아래 카드를 통해 상황에 맞는 선택을 빠르게 할 수 있습니다.</p>
+        <div class="r-grid-tm6h">
+            <div class="card">
+                <h3>가격</h3>
+                <ul>
+                    <li>저가: 셔츠룸, 풀싸롱</li>
+                    <li>중가: 룸싸롱, 텐카페</li>
+                    <li>고가: 비즈니스클럽, 하이퍼블릭</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>분위기</h3>
+                <ul>
+                    <li>캐주얼: 펍, 노래방</li>
+                    <li>프라이빗: 텐프로, 풀싸롱</li>
+                    <li>고급스러운: 비즈니스클럽, 하이퍼블릭</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>인원 제한</h3>
+                <ul>
+                    <li>소규모(2~4명): 셔츠룸, 쩜오</li>
+                    <li>중규모(5~10명): 룸싸롱, 텐카페</li>
+                    <li>대규모(10명 이상): 풀싸롱, 비즈니스클럽</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>이용 목적</h3>
+                <ul>
+                    <li>친목·술자리: 펍, 노래방</li>
+                    <li>비즈니스·네트워킹: 비즈니스클럽</li>
+                    <li>프라이버시·특수 서비스: 텐프로, 풀싸롱</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <section>
+        <h2>업종별 비교 차트</h2>
+        <div class="r-grid-tm6h">
+            <div class="card">
+                <img src="https://roundlog.site/img/shirtsroom.jpg" alt="셔츠룸" class="r-img-u8vv">
+                <h3>셔츠룸</h3>
+                <p>가격: 저가 / 분위기: 캐주얼 / 인원: 2~4명 / 목적: 친목</p>
+            </div>
+            <div class="card">
+                <img src="https://roundlog.site/img/room-salon.jpg" alt="룸싸롱" class="r-img-u8vv">
+                <h3>룸싸롱</h3>
+                <p>가격: 중가 / 분위기: 프라이빗 / 인원: 5~10명 / 목적: 프라이버시</p>
+            </div>
+            <div class="card">
+                <img src="https://roundlog.site/img/tenpro.jpg" alt="텐프로" class="r-img-u8vv">
+                <h3>텐프로</h3>
+                <p>가격: 중가 / 분위기: 프라이빗 / 인원: 5~10명 / 목적: 특수 서비스</p>
+            </div>
+            <div class="card">
+                <img src="https://roundlog.site/img/business-club.jpg" alt="비즈니스클럽" class="r-img-u8vv">
+                <h3>비즈니스클럽</h3>
+                <p>가격: 고가 / 분위기: 고급스러운 / 인원: 10명 이상 / 목적: 비즈니스·네트워킹</p>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <section>
+        <h2>FAQ</h2>
+        <dl>
+            <dt>가격이 가장 저렴한 업종은?</dt>
+            <dd>셔츠룸과 풀싸롱이 저가 라인에 해당합니다.</dd>
+            <dt>대규모 인원 모임에 적합한 곳은?</dt>
+            <dd>풀싸롱과 비즈니스클럽이 10명 이상을 수용할 수 있습니다.</dd>
+            <dt>프라이버시가 중요한 경우 어떤 업종을 선택해야?</dt>
+            <dd>텐프로, 텐카페, 풀싸롱이 프라이빗 공간을 제공합니다.</dd>
+        </dl>
+    </section>
+</main>
+
+<footer class="k-top-vbdc">
+    <div class="container">
+        <p>&copy; 2026 RoundLog. All rights reserved.</p>
     </div>
+</footer>
 
-    <div class="comparison-grid">
-      <!-- Card 1 -->
-      <div class="compare-card">
-        <div class="card-header">
-          <h2 class="card-title">셔츠룸</h2>
-          <span class="card-badge">가성비 최상위</span>
-        </div>
-        <div class="card-stats">
-          <div class="stat-item">
-            <span class="stat-value">₩40~70만</span>
-            <span class="stat-label">1인 기준</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-value">90분</span>
-            <span class="stat-label">기본 시간</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-value">중간</span>
-            <span class="stat-label">프라이빗</span>
-          </div>
-        </div>
-        <p class="card-description">서비스와 착석 구조는 룸싸롱과 유사하지만, 의상 컨셉이 고정되어 있다는 점에서 변수 통제가 쉽다. 인원이 2~3명일 때 시간당 비용 효율이 가장 높다. 뻔한 분위기를 싫어하는 사람에겐 독이 될 수 있지만, 가격 예측 가능성은 업계 최고다.</p>
-        <div class="card-verdict">
-          <span class="verdict-icon">📊</span> 소규모·비용 통제 목적이면 무조건 1순위.
-        </div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="compare-card">
-        <div class="card-header">
-          <h2 class="card-title">룸싸롱 (일반)</h2>
-          <span class="card-badge">기본기</span>
-        </div>
-        <div class="card-stats">
-          <div class="stat-item">
-            <span class="stat-value">₩80~120만</span>
-            <span class="stat-label">1인 기준</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-value">100분</span>
-            <span class="stat
 </body>
 </html>
