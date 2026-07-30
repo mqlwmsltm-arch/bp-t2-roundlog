@@ -2,4 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://roundlog.site/sitemap.xml
+Sitemap: https://roundlog.site/sitemap-pages.xml
 Sitemap: https://roundlog.site/sitemap-index.xml
